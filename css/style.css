@@ -25,15 +25,49 @@ main {
 
     /* left section */
     .col-nav {
-    width: 200px;
+    width: 250px;
     background-color: #000000;
+    padding: 5px;
     }
+
+        .logo {
+
+            /* debug */
+            border: 1px solid white;
+            min-height: 100px;
+        }
+
+        .nav-list {
+
+            /* debug */
+            border: 1px solid white;
+            min-height: 150px;
+        }
+
+        .playlist {
+
+            /* debug */
+            border: 1px solid white;
+            min-height: 650px;
+        }
+
+        .profile {
+
+            /* debug */
+            border: 1px solid white;
+            min-height: 130px;
+        }
 
     /* main section */
     .col-body {
     width: calc(100% - 200px);
     background-color: #141922;
     }
+
+        .upgrade {
+            background-color: #080b12;
+            height: 100px;
+        }
 
 
 /* FOOTER */
