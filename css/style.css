@@ -8,12 +8,18 @@ img {
     max-width: 100%;
 }
 
+/* COMMON */
+/* Utilities */
 a {
     text-decoration: none;
 }
 
 ul {
     list-style: none;
+}
+
+.subtitle {
+    color: #7d7f84;
 }
 
 /* MAIN */
@@ -91,6 +97,7 @@ main {
     .col-body {
     width: calc(100% - 200px);
     background-color: #141922;
+    overflow: auto;
     }
 
         .upgrade {
@@ -123,8 +130,25 @@ main {
                 gap: 2rem;
             }
 
+        .explorer {
+            color: white;
+            padding-left: 1rem
+        }
+
+            .rp,
+            .cpj,
+            .pop {
+                margin-bottom: 2.5rem;
+            }
+
+                .rp h2 {
+                    margin-bottom: 1.5rem;
+                }
+            
+            
 /* FOOTER */
 footer {
+    position: fixed;
     width: 100%;
     height: 100px;
     background-color: #282828;
