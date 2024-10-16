@@ -1,7 +1,14 @@
+:root {
+    --footer-height: 100px;
+    --col-nav-width: 250px;
+    --upgrade-height: 100px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
   
 img {
@@ -22,28 +29,43 @@ ul {
     color: #7d7f84;
 }
 
+.col-nav a {
+    color: #7d7f84;
+}
+
 /* MAIN */
 main {
     width: 100%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - var(--footer-height));
     display: flex;  
 }
 
     /* left section */
     .col-nav {
-        padding-left: 1.3rem;
-        padding-right: 1.3rem;
         color: #a3a3a3;
         width: 250px;
-        background-color: #000000;    
+        background-color: #000000;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
     }
 
-        .logo {
-            padding-top: 1.3rem;
+        .top-nav {
+            height: 90%;
+        }
 
-            /* debug */
-            border: 1px solid white;
-            min-height: 100px;
+        .bottom-nav {
+            height: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding-bottom: 0.5rem;
+        }
+
+        .logo {
+            padding-left: 1.3rem;
+            padding-top: 1.3rem;
+            
         }
 
             .logo-big {
@@ -55,24 +77,32 @@ main {
             }
 
         .nav-list {
-
-            /* debug */
-            border: 1px solid white;
-            min-height: 150px;
+            padding-top: 1rem;
+            
         }
 
             .nav-list ul {
-                
                 display: flex;
                 flex-direction: column;
                 gap: 0.7rem;
             }
 
-        .playlist {
+            .nav-list a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                border-left: 1px solid #adff2f;
+                padding-left: 1.3rem;
+            }
 
-            /* debug */
-            border: 1px solid white;
-            min-height: 700px;
+            .nav-list img {
+                width: 13%;
+                
+            }
+
+        .playlist {
+            padding-top: 1.3rem;
+            padding-left: 1.3rem;
         }
 
             .playlist h4 {
@@ -86,19 +116,51 @@ main {
                 gap: 0.7rem;
             }
 
-        .profile {
+            .playlist li {
+                padding-bottom: 0.5rem;
+            }
 
-            /* debug */
-            border: 1px solid white;
-            min-height: 80px;
+            .fa-plus {
+                color: #080b12;
+                border: 1px solid #7d7f84;
+                padding: 0.4rem 0.5rem;
+                background-color: #7d7f84;
+            } 
+
+        .profile {
+            padding-left: 1.3rem;
+            padding-right: 1.3rem;
         }
+
+            .fa-circle-arrow-down {
+                margin-right: 0.5rem;
+                font-size: 0.7rem;
+            }
+
+            .profile hr {
+                margin-top: 0.8rem;
+                margin-bottom: 0.8rem;
+                border: 1px solid #7d7f84;
+            }
+
+            .profile a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .profile img {
+                width: 10%;
+                border: 1px solid #7d7f84;
+                border-radius: 50%;
+                background-color: #7d7f84;
+            }
 
     /* main section */
     .col-body {
-    width: calc(100% - 200px);
-    background-color: #141922;
-    overflow: auto;
-    }
+        width: calc(100% - var(--col-nav-width));
+        background-color: #141922;
+        }
 
         .upgrade {
             background-color: #080b12;
@@ -122,38 +184,43 @@ main {
                 /* debug */
                 border: 1px solid white;
         }
+
+        .content {
+            overflow: auto;
+            height: calc(100% - var(--upgrade-height));
+        }
         
-        .body-nav {
-            color: #7d7f84;
-            padding: 0.8rem;
+            .body-nav {
+                color: #7d7f84;
+                padding: 0.8rem;
 
-            /* debug */
-            border: 1px solid white;
-            min-height: 70px;
-        }
-
-            .body-nav ul {
-                display: flex;
-                justify-content: center;
-                gap: 2rem;
+                /* debug */
+                border: 1px solid white;
+                min-height: 70px;
             }
 
-        .explorer {
-            color: white;
-            padding-left: 1rem
-        }
-
-            .rp,
-            .cpj,
-            .pop {
-                margin-bottom: 2.5rem;
-            }
-
-                .rp h2 {
-                    margin-bottom: 1.5rem;
+                .body-nav ul {
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
                 }
-            
-            
+
+            .explorer {
+                color: white;
+                padding-left: 1rem
+            }
+
+                .rp,
+                .cpj,
+                .pop {
+                    margin-bottom: 2.5rem;
+                }
+
+                    .rp h2 {
+                        margin-bottom: 1.5rem;
+                    }
+                
+                
 /* FOOTER */
 footer {
     position: fixed;
@@ -202,10 +269,16 @@ footer {
         width: 50px;
         padding: 0.2rem;
     }
+    
+    .top-nav img {
+        width: 80%;
+        margin: 0 auto;
+    }
 
     .logo {
         padding-top: 0;
-        min-height: 50px;
+        padding-left: 0;
+        min-height: 0px;
     }
 
     .logo-big {
@@ -213,12 +286,49 @@ footer {
     }
 
     .logo-small {
-        width: 70%;
         display: block;
         margin: 0 auto;
         padding-top: 0;
     }
 
+    .nav-list a {
+        border-left: 0;
+        padding-left: 0;
+    }
+
+    .nav-list span {
+        display: none;
+    }
+
+    .playlist {
+        display: none;
+    }
+
+    .profile {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile img {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .profile a {
+        padding-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile span, hr {
+        display: none;
+
+    }
+
+    .upgrade .bnt {
+        font-size: 0.65rem;
+    }
 
 
     .col-body {
