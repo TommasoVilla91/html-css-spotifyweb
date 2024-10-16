@@ -10,7 +10,7 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-  
+
 img {
     max-width: 100%;
 }
@@ -27,6 +27,7 @@ ul {
 
 .subtitle {
     color: #7d7f84;
+    padding-top: 0.5rem;
 }
 
 .col-nav a {
@@ -37,7 +38,7 @@ ul {
 main {
     width: 100%;
     height: calc(100vh - var(--footer-height));
-    display: flex;  
+    display: flex;
 }
 
     /* left section */
@@ -65,7 +66,7 @@ main {
         .logo {
             padding-left: 1.3rem;
             padding-top: 1.3rem;
-            
+
         }
 
             .logo-big {
@@ -78,7 +79,7 @@ main {
 
         .nav-list {
             padding-top: 1rem;
-            
+
         }
 
             .nav-list ul {
@@ -91,13 +92,15 @@ main {
                 display: flex;
                 align-items: center;
                 gap: 5px;
-                border-left: 1px solid #adff2f;
                 padding-left: 1.3rem;
+
+                /* hover rules */
+                border-left: 2px solid #adff2f;
             }
 
             .nav-list img {
                 width: 13%;
-                
+
             }
 
         .playlist {
@@ -125,7 +128,7 @@ main {
                 border: 1px solid #7d7f84;
                 padding: 0.4rem 0.5rem;
                 background-color: #7d7f84;
-            } 
+            }
 
         .profile {
             padding-left: 1.3rem;
@@ -189,25 +192,41 @@ main {
             overflow: auto;
             height: calc(100% - var(--upgrade-height));
         }
-        
-            .body-nav {
-                color: #7d7f84;
-                padding: 0.8rem;
 
-                /* debug */
-                border: 1px solid white;
-                min-height: 70px;
+            /* nav main */
+            .body-nav {
+                padding: 0.8rem;
+                font-size: 0.7rem;
             }
 
                 .body-nav ul {
                     display: flex;
                     justify-content: center;
-                    gap: 2rem;
+                    gap: 1.5rem;
+                    flex-wrap: wrap;
                 }
 
+                .body-nav li {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 2px;
+                }
+
+
+                .body-nav a {
+                    color: #7d7f84;
+                }
+
+                .underline {
+                    border-top: 2px solid #adff2f;
+                    width: 40%;
+                }
+
+            /* exploration area */
             .explorer {
                 color: white;
-                padding-left: 1rem
+                padding:1.5rem 1rem 2rem;
             }
 
                 .rp,
@@ -219,8 +238,23 @@ main {
                     .rp h2 {
                         margin-bottom: 1.5rem;
                     }
-                
-                
+
+                    .row {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 1rem;
+                    }
+
+                    .card {
+                        width: calc(100% / 6);
+                        text-align: center;
+                    }
+
+                    .card h3 {
+                        padding-top: 1rem;
+                    }
+
+
 /* FOOTER */
 footer {
     position: fixed;
@@ -256,25 +290,41 @@ footer {
 
 /* Desktop First */
 
+/* 1024 */
+@media screen and (max-width: 1024px) {
+    /* exploration area */
+    .card {
+        width: calc(100% / 4);
+    }
+}
+
 /* 768px */
 @media screen and (max-width: 768px) {
+    /* left area */
     .col-nav {
         padding-left: 0.8rem;
+    }
+
+    /* exploration area */
+    .card {
+        width: calc(100% / 2);
     }
 }
 
 /* 425px */
 @media screen and (max-width: 425px) {
+    /* left area */
     .col-nav {
         width: 50px;
         padding: 0.2rem;
     }
-    
+
     .top-nav img {
         width: 80%;
         margin: 0 auto;
     }
 
+    /* logo */
     .logo {
         padding-top: 0;
         padding-left: 0;
@@ -291,6 +341,7 @@ footer {
         padding-top: 0;
     }
 
+    /* head nav */
     .nav-list a {
         border-left: 0;
         padding-left: 0;
@@ -300,10 +351,13 @@ footer {
         display: none;
     }
 
+    /* playlist */
     .playlist {
         display: none;
     }
 
+    
+    /* nav profile */
     .profile {
         padding: 0;
         display: flex;
@@ -323,19 +377,24 @@ footer {
 
     .profile span, hr {
         display: none;
-
     }
 
+    /* upgrade area */
     .upgrade .bnt {
         font-size: 0.65rem;
     }
 
-
+    /* nav main */
     .col-body {
         width: calc(100% - 50px);
     }
-    
+
     .body-nav ul {
         flex-wrap: wrap;
+    }
+
+    /* exploration area */
+    .card {
+        
     }
 }
