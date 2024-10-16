@@ -63,10 +63,10 @@ main {
             padding-bottom: 0.5rem;
         }
 
+        /* logos */
         .logo {
             padding-left: 1.3rem;
             padding-top: 1.3rem;
-
         }
 
             .logo-big {
@@ -77,9 +77,9 @@ main {
                 display: none;
             }
 
+        /* head nav */
         .nav-list {
             padding-top: 1rem;
-
         }
 
             .nav-list ul {
@@ -92,17 +92,34 @@ main {
                 display: flex;
                 align-items: center;
                 gap: 5px;
-                padding-left: 1.3rem;
-
-                /* hover rules */
-                border-left: 2px solid #adff2f;
+                padding-left: 1.3rem;   
             }
 
             .nav-list img {
                 width: 13%;
-
+                opacity: 0.4;
             }
 
+            li:hover .home {
+                border-left: 2px solid #adff2f;
+                color: white;                
+            }
+
+            li:hover .search {
+                border-left: 2px solid #adff2f;
+                color: white;                
+            }
+
+            li:hover .library {
+                border-left: 2px solid #adff2f;
+                color: white;                
+            }
+
+            li:hover img {
+                opacity: 2;
+            }
+        
+        /* playlist area */
         .playlist {
             padding-top: 1.3rem;
             padding-left: 1.3rem;
@@ -127,9 +144,19 @@ main {
                 color: #080b12;
                 border: 1px solid #7d7f84;
                 padding: 0.4rem 0.5rem;
-                background-color: #7d7f84;
+                background-color: white;
+                opacity: 0.5;
             }
 
+            li:hover .pl {
+                color: white;                
+            }
+
+            li:hover i {
+                opacity: 1;
+            }
+        
+        /* profile area */
         .profile {
             padding-left: 1.3rem;
             padding-right: 1.3rem;
@@ -159,6 +186,10 @@ main {
                 background-color: #7d7f84;
             }
 
+            .profile a:hover span {
+                color: white;
+            }
+
     /* main section */
     .col-body {
         width: calc(100% - var(--col-nav-width));
@@ -183,10 +214,13 @@ main {
                 padding: 0.8rem 2.4rem;
                 border-radius: 30px;
                 font-size: 0.8rem;
-
-                /* debug */
                 border: 1px solid white;
-        }
+                transform: scale(1);
+            }
+
+            .upgrade:hover .bnt {
+                transform: scale(1.2);
+            }
 
         .content {
             overflow: auto;
@@ -204,6 +238,7 @@ main {
                     justify-content: center;
                     gap: 1.5rem;
                     flex-wrap: wrap;
+                    height: 1rem;
                 }
 
                 .body-nav li {
@@ -219,14 +254,37 @@ main {
                 }
 
                 .underline {
+                    display: none;
                     border-top: 2px solid #adff2f;
                     width: 40%;
+                }
+
+                .body-nav li:hover a {
+                    color:white;
+                }
+
+                .body-nav li:hover div {
+                    display: inline;
                 }
 
             /* exploration area */
             .explorer {
                 color: white;
                 padding:1.5rem 1rem 2rem;
+            }
+
+            .card {
+                position: relative;
+            }
+
+            .fa-circle-play {
+                position: absolute;
+                left: 50%;
+                bottom: 45%;
+                transform: translate(-50%, -50%);
+                font-size: 4rem;
+                z-index: -1;
+                color: white;
             }
 
             .card img {
@@ -269,6 +327,13 @@ main {
                         border-radius: 50%;
                     }
                     
+            .card:hover img {
+                opacity: 0.3;
+            }
+
+            .card:hover .fa-circle-play {
+                z-index: 1;
+            }
 
 
 /* FOOTER */
