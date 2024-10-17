@@ -211,6 +211,7 @@ main {
             }
 
             .upgrade .bnt {
+                margin-right: 2rem;
                 color: white;
                 padding: 0.8rem 2.4rem;
                 border-radius: 30px;
@@ -359,65 +360,68 @@ footer {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        height: 100%;
     }
-
-        .miniature,
-        .device-tools {
-
-            /* debug */
-            border: 1px solid white;
-        }
 
         /* miniature section */
         .miniature {
-            width: 30%;
             padding-left: 0.5rem;
             color: #7d7f84;
             display: flex;
             justify-content: left;
             align-items: center;
-
-            /* debug */
-            border: 1px solid white;
+            gap: 2.3rem;
         }
 
-            .miniature figure {
+            .mini-album {
                 display: flex;
                 justify-content: left;
                 align-items: center;
                 gap: 0.5rem;
             }
 
-                figure img {
-                    width: 15%;
+                .mini-album img {
+                    width: 70px;
                 }
 
-                figure h5 {
+                .mini-album h5 {
                     color: white;
                 }
 
-                figure a {
+                .mini-album a {
                     color: #7d7f84;
                     font-size: 0.7rem;
                 }
+            
+            .interact .fa-heart {
+                margin-right: 0.5rem;
+            }
+
+            .text:hover span {
+                color: white;
+            }
+
+            .interact:hover .fa-heart {
+                color: white;
+            }
+
+            .interact:hover .fa-folder {
+                color: white;
+            }
 
         /* playing tools section */
         .playing-tools {
-            width: 40%;
             padding-top: 0.5rem;
             display: flex;
             flex-direction: column;
-
-
-            /* debug */
-            border: 1px solid white;
+            width: 550px;
         }
 
         .controls {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
             height: 50%;
         }
 
@@ -426,7 +430,11 @@ footer {
             }
 
             .controls .fa-circle-play {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+
+            .controls:hover .fa-circle-play {
+                transform: scale(1.3);
             }
 
         .playing-time {
@@ -434,7 +442,6 @@ footer {
             justify-content: center;
             align-items: center;
             color: white;
-            height: 40%;
             font-size: 0.6rem;
         }
 
@@ -445,9 +452,11 @@ footer {
 
             .playing-bar {
                 height: 2px;
-                border: 2px solid white;
+                border: 2px solid #7d7f84;
                 border-radius: 20px;
             }
+
+            
         
         /* device tools section */
         .device-tools {
@@ -500,11 +509,24 @@ footer {
     }
 
     /* FOOTER */
-    
+    .miniature {
+        gap: 2rem;
+        width: 220px;
+    }    
+
+    .interact .fa-heart {
+        margin-right: 0;
+        margin-bottom: 0.3rem;
+        display: block;
+    }
+
+    .playing-tools {
+        width: 300px;
+    }
 }
 
-/* 425px */
-@media screen and (max-width: 425px) {
+/* 480px */
+@media screen and (max-width: 480px) {
     /* left area */
     .col-nav {
         width: 50px;
@@ -592,5 +614,28 @@ footer {
     }
 
     /* FOOTER */
-    
+    footer .container {
+        gap: 0.8rem;
+    }
+
+    .text {
+        line-height: 0.5rem;
+    }
+
+    .miniature span {
+        font-size: 0.6rem;
+    }
+
+    .mini-album img {
+        width: 30px;
+    }
+
+    .mini-album h5 {
+        font-size: 0.7rem;
+    }
+
+    .device-tools {
+        width: 150px;
+        gap: 0.5rem;
+    }
 }
